@@ -55,7 +55,7 @@ export class App extends Component {
         <SearchBar searchQuery={this.searchQuery} />
         {this.state.apiResponse.length ? <ImageGallery result={this.state.apiResponse} /> : <></>}
         {this.state.loading && <Loader />}
-        {this.state.apiResponse === "" || this.state.isError && <Button loadMore={this.loadMore} />}
+        {this.state.apiResponse.length || this.state.isError ? <Button loadMore={this.loadMore} /> : <></>}
 
       </div>
     )
