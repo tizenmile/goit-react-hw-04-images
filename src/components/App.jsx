@@ -39,7 +39,7 @@ export class App extends Component {
 
   searchQuery = async (event) => {
     event.preventDefault()
-    this.setState({ loading: true, apiResponse: '' })
+    this.setState({ loading: true, apiResponse: '', page: 1 })
     await this.setState({ search: event.target.search.value })
     await this.fetchFromPixabay()
   }
